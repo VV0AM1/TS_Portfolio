@@ -1,22 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Sora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300","400","500","600","700","800"],
 });
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300","400","500","600","700"],
 });
 
 export const metadata: Metadata = {
   title: "TS Portfolio",
   description: "TypeScript portfolio & mini-landing with Next.js",
-  metadataBase: new URL("https://tsportfolio.netlify.app"), 
+  metadataBase: new URL("https://tsportfolio.netlify.app"),
   icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "TS Portfolio",
@@ -25,12 +28,8 @@ export const metadata: Metadata = {
     siteName: "TS Portfolio",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "TS Portfolio",
-    description: "TypeScript portfolio & mini-landing with Next.js",
-  },
-  keywords: ["TypeScript", "Next.js", "React", "Tailwind", "Portfolio"],
+  twitter: { card: "summary_large_image", title: "TS Portfolio", description: "TypeScript portfolio & mini-landing with Next.js" },
+  keywords: ["TypeScript","Next.js","React","Tailwind","Portfolio"],
 };
 
 export const viewport: Viewport = {
@@ -40,14 +39,11 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
+        className={`${sora.variable} ${jetbrains.variable} antialiased min-h-screen bg-background text-foreground`}
       >
         {children}
       </body>

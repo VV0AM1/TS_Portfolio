@@ -40,7 +40,7 @@ export default function Demo(){
                 value={email}
                 onChange={(e)=>setEmail(e.target.value)}
               />
-              <button type="submit" className="w-full px-4 py-2 rounded-md bg-primary text-primary-foreground">
+              <button type="submit" className="w-full px-4 py-2 rounded-md ts-gradient text-white btn-neo">
                 Unir-me
               </button>
             </form>
@@ -48,8 +48,8 @@ export default function Demo(){
         </div>
 
         <div className="space-y-3 text-sm text-muted-foreground">
-          <pre className="p-4 rounded-2xl border bg-card overflow-x-auto"><code>{codeTypeGuard}</code></pre>
-          <pre className="p-4 rounded-2xl border bg-card overflow-x-auto"><code>{codeHook}</code></pre>
+          <pre className="p-4 rounded-[var(--radius-md)] border bg-black/40 text-white/90 overflow-x-auto shadow-[0_0_0_1px_rgba(49,120,198,.15)]"><code>{codeTypeGuard}</code></pre>
+          <pre className="p-4 rounded-[var(--radius-md)] border bg-black/40 text-white/90 overflow-x-auto shadow-[0_0_0_1px_rgba(49,120,198,.15)]"><code>{codeHook}</code></pre>
         </div>
       </div>
     </Section>

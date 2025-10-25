@@ -1,23 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg:              oklch(99% 0.01 250);
-  --color-fg:              oklch(22% 0.02 250);
-
-  --color-primary-50:      #f0f6ff;
-  --color-primary-100:     #d6e6ff;
-  --color-primary-200:     #abc9ff;
-  --color-primary-300:     #7da9ff;
-  --color-primary-400:     #5b8dff;
-  --color-primary-500:     #3178c6; 
-  --color-primary-600:     #2a69ad;
-  --color-primary-700:     #245a94;
-  --color-primary-800:     #1b4570;
-  --color-primary-900:     #122d49;
-
-  --color-accent:          #00e1ff; 
-  --color-ring:            var(--color-primary-400);
-
+  --color-bg: oklch(99% 0.01 250);
+  --color-fg: oklch(22% 0.02 250);
+  --color-primary-50: #f0f6ff;
+  --color-primary-100: #d6e6ff;
+  --color-primary-200: #abc9ff;
+  --color-primary-300: #7da9ff;
+  --color-primary-400: #5b8dff;
+  --color-primary-500: #3178c6;
+  --color-primary-600: #2a69ad;
+  --color-primary-700: #245a94;
+  --color-primary-800: #1b4570;
+  --color-primary-900: #122d49;
+  --color-accent: #00e1ff;
+  --color-ring: var(--color-primary-400);
   --radius-sm: 10px;
   --radius-md: 14px;
   --radius-lg: 22px;
@@ -26,17 +23,35 @@
 :root {
   --background: var(--color-bg);
   --foreground: var(--color-fg);
+  --surface: oklch(98% 0.02 250);
+  --muted:   oklch(94% 0.02 250);
+  --ring:    var(--color-primary-400);
+      scroll-behavior: smooth;
+
 }
+
+
 
 .dark {
   --background: #0b1220;
   --foreground: #eef2ff;
+  --surface: #0e1424;
+  --muted:   #111a30;
+  --ring: var(--color-primary-400);
 }
 
-html, body {
-  background: var(--background);
-  color: var(--foreground);
+html, body { background: var(--background); color: var(--foreground);
+    scroll-behavior: smooth;
+      font-family: var(--font-sora), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  font-feature-settings: "ss01" 1, "ss02" 1;
+  letter-spacing: 0.01em;
 }
+
+code, pre, kbd, samp, .code, .mono {
+  font-family: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-feature-settings: "calt" 1, "liga" 1; 
+}
+
 
 .glass {
   background: color-mix(in oklch, var(--background) 70%, transparent);
@@ -64,3 +79,33 @@ html, body {
 .link-underline:hover { background-size: 100% 2px; }
 .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
 .card-hover:hover { transform: translateY(-3px); box-shadow: 0 14px 40px -20px var(--color-primary-900); }
+
+.surface   { background: var(--surface); }
+.muted     { background: var(--muted); }
+
+.ts-line { height: 3px; background-image: linear-gradient(90deg,var(--color-primary-600),var(--color-primary-400),var(--color-accent)); }
+.ts-ring { box-shadow: 0 0 0 1px color-mix(in oklch,var(--ring) 40%,transparent), 0 10px 30px -18px color-mix(in oklch,var(--ring) 35%,transparent); }
+.border-gradient { border-image: linear-gradient(120deg, color-mix(in oklch,var(--color-primary-400) 60%, transparent), transparent 60%) 1; }
+
+.hover-lift   { transition: transform .25s ease, box-shadow .25s ease; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -24px color-mix(in oklch,var(--color-primary-900) 40%,transparent); }
+.hover-glow:hover { box-shadow: 0 0 0 1px color-mix(in oklch,var(--ring) 55%,transparent), 0 12px 40px -24px var(--ring); }
+
+.gradient-text { background: linear-gradient(90deg,var(--color-primary-600),var(--color-primary-400),var(--color-accent)); -webkit-background-clip:text; background-clip:text; color: transparent; }
+
+.separator {
+  position: relative; height: 1px; background: color-mix(in oklch,var(--foreground) 10%, transparent);
+}
+.separator::after {
+  content: ""; position: absolute; inset-inline: 0; top: -1px; height: 3px;
+  background: linear-gradient(90deg,transparent, var(--color-primary-400), transparent);
+  opacity: .45; filter: blur(6px);
+}
+
+:where(a, button, input, textarea, [role="button"]) {
+  outline: none;
+}
+:where(a, button, input, textarea, [role="button"]):focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+  border-radius: 10px;
+}

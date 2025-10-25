@@ -1,12 +1,12 @@
 import Section from "../Section";
 
 const Item = ({ year, title, text }:{ year: string; title: string; text: string }) => (
-  <div className="relative pl-10 pb-8">
-    <div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-primary" />
-    <div className="absolute left-1 top-0 bottom-0 w-px bg-border ml-0.5" />
-    <h4 className="text-sm text-muted-foreground">{year}</h4>
+  <div className="relative pl-10 pb-8 hover-lift">
+    <div className="absolute left-0 top-2 w-2 h-2 rounded-full ts-gradient" />
+    <div className="absolute left-1 top-0 bottom-0 w-[2px] bg-[var(--color-primary-900)]/20" />
+    <h4 className="text-sm opacity-70">{year}</h4>
     <h3 className="text-lg font-semibold">{title}</h3>
-    <p className="text-muted-foreground leading-relaxed">{text}</p>
+    <p className="opacity-80 leading-relaxed">{text}</p>
   </div>
 );
 
@@ -43,8 +43,8 @@ export default function Timeline(){
         </div>
 
         <div className="space-y-4 text-sm">
-          <pre className="p-4 rounded-2xl border bg-card overflow-x-auto"><code>{codeInstall}</code></pre>
-          <pre className="p-4 rounded-2xl border bg-card overflow-x-auto"><code>{codeTs}</code></pre>
+          <pre className="p-4 rounded-[var(--radius-md)] border bg-black/40 text-white/90 overflow-x-auto ts-ring"><code>{codeInstall}</code></pre>
+          <pre className="p-4 rounded-[var(--radius-md)] border bg-black/40 text-white/90 overflow-x-auto ts-ring"><code>{codeTs}</code></pre>
         </div>
       </div>
     </Section>

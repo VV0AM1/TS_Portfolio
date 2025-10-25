@@ -9,7 +9,7 @@ const IconWrap = ({ children }:{ children: React.ReactNode }) => (
 const Feature = ({ icon, title, desc, img }:{
   icon: React.ReactNode; title: string; desc: string; img: string
 }) => (
-  <div className="grid items-center gap-4 border rounded-[var(--radius-lg)] p-4 md:p-6 card-hover glass">
+  <div className="grid items-center gap-4 rounded-[var(--radius-lg)] p-4 md:p-6 glass hover-lift border border-gradient">
     <div className="flex items-center gap-3">
       <IconWrap>{icon}</IconWrap>
       <h3 className="text-lg font-semibold">{title}</h3>
@@ -27,8 +27,8 @@ export default function Features(){
       <h2 className="text-3xl font-bold tracking-tight">On s'utilitza?</h2>
       <p className="mt-3 opacity-80">Frontend, backend, tooling i més — amb tipus per a refactors segurs.</p>
       <div className="grid md:grid-cols-3 gap-6 mt-8">
-        <Feature icon={<Globe2 className="h-5 w-5" />} title="Frontend web" desc="React/Next, Angular i Vue." img="/images/feature-frontend.png" />
-        <Feature icon={<Hammer className="h-5 w-5" />} title="Tooling" desc="Vite, ESLint, Playwright…" img="/images/feature-tooling.png" />
+        <Feature icon={<Globe2 className="h-5 w-5" />} title="Frontend web" desc="React/Next, Angular i Vue." img="/images/feature-frontend.jpg" />
+        <Feature icon={<Hammer className="h-5 w-5" />} title="Tooling" desc="Vite, ESLint, Playwright…" img="/images/feature-tooling.jpg" />
         <Feature icon={<Cpu className="h-5 w-5" />} title="Backend" desc="Node, Deno, Bun; APIs i microserveis." img="/images/feature-backend.png" />
       </div>
     </Section>

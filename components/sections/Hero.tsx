@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Hero(){
   return (
-    <Section className="py-16 md:py-24 relative">
+    <Section className="py-16 md:py-24 relative mt-8">
       <div className="absolute inset-0 hero-grid pointer-events-none" />
       <div className="relative grid md:grid-cols-2 gap-10 items-center">
         <motion.div initial={{opacity:0, y:16}} animate={{opacity:1, y:0}} transition={{duration:0.5}}>
@@ -36,10 +36,10 @@ export default function Hero(){
 
         <motion.div initial={{opacity:0, scale:0.98}} animate={{opacity:1, scale:1}} transition={{duration:0.5, delay:0.05}} className="relative">
           <div className="rounded-[var(--radius-lg)] overflow-hidden border card-hover">
-            <Image src="/images/ts-hero.png" alt="TypeScript hero" width={1200} height={800} priority />
+            <Image src="/images/ts-hero.jpeg" alt="TypeScript hero" width={1200} height={800} priority />
           </div>
           <div className="absolute -bottom-6 -left-6 rounded-[var(--radius-md)] overflow-hidden border hidden md:block card-hover">
-            <Image src="/images/code-snippet.png" alt="Code snippet" width={280} height={180} />
+            <Image src="/images/code-snippet.webp" alt="Code snippet" width={280} height={180} />
           </div>
         </motion.div>
       </div>
