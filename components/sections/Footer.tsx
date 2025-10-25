@@ -67,7 +67,7 @@ export default function Footer() {
 
       <Section className="pb-8">
         <div className="text-xs opacity-60">
-          © {year} TS Portfolio — Fet amb Next.js + Tailwind.{" "}
+          © {year} TS Portfolio — by Ilia Akimov.{" "}
           <a href="#historia" className="link-underline hover:text-[var(--color-primary-400)]">
             Torna a l’inici
           </a>{" "}
